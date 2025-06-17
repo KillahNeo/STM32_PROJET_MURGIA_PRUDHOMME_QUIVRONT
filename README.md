@@ -1,26 +1,43 @@
-# STM32_PROJET_MURGIA_PRUDHOMME_QUIVRONT
-PROJET STM 32 : DATALOGGER + CLASSIFICATION
 # 🚀 Projet STM32 – Murgia / Prudhomme / Quivront
 
-Ce dépôt contient le code source du projet réalisé dans le cadre du cours de microcontrôleur. Il repose sur la carte **NUCLEO-L152RE**, le capteur **HTS221**, et l’utilisation de **NanoEdge AI Studio** pour la classification. Le projet intègre également des périphériques STM32 classiques (ADC, GPIO, PWM, SPI, UART...) et déclenche des actions physiques (moteur) en fonction de la classe détectée.
+Ce dépôt contient le code source du projet réalisé dans le cadre du cours de microcontrôleur (STM32). Il est basé sur la carte **NUCLEO-L152RE**, le capteur **HTS221**, et l’utilisation de **NanoEdge AI Studio** pour la classification. Le projet respecte les contraintes imposées par le sujet (ADC, GPIO, PWM, SPI, UART, interruptions...).
 
-## 📁 Structure du projet
+---
 
-- `/Core` : Code principal (main.c, traitement des interruptions, logique du moteur...)
-- `/Drivers` : Bibliothèques de périphériques et display
-- `*.ioc` : Fichier de configuration STM32CubeMX
-- `/NanoEdgeAI` : Fichiers générés par NanoEdge AI Studio (knowledge.h, model.h...)
-- `README.md` : Ce fichier
+## 🗂️ Organisation du dépôt
+
+Le dépôt est divisé en **deux répertoires principaux** correspondant aux grandes étapes du projet :
+
+### 📁 `datalogger/`
+
+> 🧪 Cette première partie permet de **récupérer et afficher les valeurs brutes du capteur HTS221** via UART et écran SPI.
+
+* Affichage des valeurs sur TeraTerm
+* Écriture propre avec interruptions, SPI, ADC...
+* Permet de valider l’acquisition et la configuration matérielle
+
+### 📁 `classification/`
+
+> 🧠 Partie finale du projet avec **intégration de NanoEdge AI** pour classifier les données (humid / dry / ambient) et déclencher des actions.
+
+* IA embarquée avec 3 classes
+* Affichage des classes sur écran SPI
+* Moteur activé si la classe détectée dépasse un seuil
+* Utilisation des boutons en interruptions
+* Anti-rebond, PWM moteur, ajustement dynamique des seuils
+
+
+💡 Nous avons également inclus dans le dépôt le **fichier binaire généré avec NanoEdge AI Studio pour la carte NUCLEO-L476RG**, utilisé lors de la phase de prototypage initial avant le portage définitif sur la carte L152RE.
 
 ---
 
 ## 🛠️ Pré-requis
 
-- [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
-- Git
-- TeraTerm ou autre terminal série
-- Carte NUCLEO-L152RE + capteur HTS221 (via I2C) + écran SPI + moteur (PWM)
-- Dossier NanoEdgeAI exporté dans `/NanoEdgeAI`
+* [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+* Git
+* TeraTerm (ou équivalent)
+* Carte NUCLEO-L152RE + capteur HTS221 (I2C) + écran SPI + moteur (PWM)
+* Dossiers générés par NanoEdge AI exportés dans `/NanoEdgeAI`
 
 ---
 
@@ -28,9 +45,8 @@ Ce dépôt contient le code source du projet réalisé dans le cadre du cours de
 
 ### 1. Cloner le dépôt Git
 
-> ⚠️ Avant de lancer la commande, placez-vous dans le **dossier où vous voulez stocker** le projet (ex: `Documents/ISEN/STM32/`) puis ouvrez un terminal (PowerShell ou Git Bash) :
+> 📍 Placez-vous d'abord dans le **dossier de destination** souhaité sur votre PC, puis entrez :
 
 ```bash
 git clone https://github.com/KillahNeo/STM32_PROJET_MURGIA_PRUDHOMME_QUIVRONT.git --recurse-submodules
-
-
+```

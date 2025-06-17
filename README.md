@@ -82,9 +82,9 @@ git clone https://github.com/KillahNeo/STM32_PROJET_MURGIA_PRUDHOMME_QUIVRONT.gi
 
 #### ✅ Pour le projet `NUCLEO-L152RE_HTS221_DATA_LOGGER`
 
-1. Brancher la carte **NUCLEO-L152RE** via ST-Link USB  
-2. Ouvrir **TeraTerm** (ou un terminal série) à **115200 bauds**
-3. Compiler et flasher le projet dans STM32CubeIDE
+1. Brancher la carte **NUCLEO-L152RE** via ST-Link USB  // Ajouter le matériel complet
+2. Ouvrir **TeraTerm** (ou un terminal série) à **115200 bauds** //Selectionner port com ST-link
+3. Compiler et téléverser le projet dans STM32CubeIDE 
 4. Observer dans TeraTerm les **valeurs brutes** d’humidité mesurées par le capteur HTS221 envoyées via **UART**
 5. Aucune interaction utilisateur nécessaire — mode continu  
 6. 🔁 **Les données récupérées avec ce datalogger ont été utilisées pour entraîner les classes dans NanoEdge AI Studio.**
@@ -93,9 +93,9 @@ git clone https://github.com/KillahNeo/STM32_PROJET_MURGIA_PRUDHOMME_QUIVRONT.gi
 
 #### ✅ Pour le projet `NUCLEO-L152RE_HTS221_CLASSIFICATION`
 
-1. Brancher la carte **NUCLEO-L152RE**  
+1. Brancher la carte **NUCLEO-L152RE**  // m^me commentaire
 2. Ouvrir **TeraTerm** à **115200 bauds**
-3. Compiler et flasher le projet
+3. Compiler et flasher le projet // tele
 4. Effectuer la **séquence de démarrage** pour activer le système :
    ```
    Séquence attendue :
@@ -103,7 +103,7 @@ git clone https://github.com/KillahNeo/STM32_PROJET_MURGIA_PRUDHOMME_QUIVRONT.gi
    - 2 appuis successifs sur BTN1 (PA11)
    - 1 appui sur B1 de nouveau
    ```
-   Si la séquence est correcte, un message "Sequence complete OK" s’affiche et le système démarre.
+   Si la séquence est correcte, un message "Sequence complete OK" s’affiche via UART et init sur l'écran SPI, le système démarre.
 5. L’écran SPI affiche la classe détectée (`Dry`, `Ambient`, ou `Humid`) et TeraTerm affiche aussi la classe + humidité en %.
-6. Si la classe détectée est **"Humid"** **et** que le potentiomètre (RV2) > 2V :
-   - Le **buzzer** s’active automatiquement (via interruption ADC watchdog)
+6. Si la classe détectée est **"Humid"** ET que le potentiomètre (RV2) > 2V :
+   - Le buzzer s’active automatiquement (via interruption ADC watchdog).

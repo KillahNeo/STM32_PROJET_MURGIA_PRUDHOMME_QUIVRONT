@@ -23,8 +23,8 @@ Le dépôt est divisé en **deux répertoires principaux** correspondant aux gra
 * Affichage des classes sur écran SPI 
 * Affichage des classes et de la valeur en % via l'UART
 * Utilisation des boutons en interruptions pour permettre de déverrouiller la carte via une séquence précise [Sequence : 1xB1 - 2xBTN1 - 1xB1]
-* Prise en compte de la valeur de RV2, 
-* Déclenchement du buzzer en interruption si classe "Humid" et valeur de RV2 supérieur a 2V.
+* Prise en compte de la valeur de RV2
+* Déclenchement du buzzer en interruption si classe "Humid" et valeur de RV2 supérieur a 2V ou si classe "Dry" et valeur RV2 inférieur à 2V 
 
 
 💡 Nous avons également inclus dans le dépôt le **fichier binaire généré avec NanoEdge AI Studio pour la carte NUCLEO-L476RG**, utilisé lors de la phase de prototypage initial avant le portage définitif sur la carte L152RE.

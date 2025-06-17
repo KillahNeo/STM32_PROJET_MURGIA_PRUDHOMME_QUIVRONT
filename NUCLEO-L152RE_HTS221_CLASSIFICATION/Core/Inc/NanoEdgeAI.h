@@ -31,7 +31,7 @@ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*
 #include <stdint.h>
 
 /* Define */
-#define NEAI_ID "68273d52443fec722e5effe4"
+#define NEAI_ID "68512d0b5dc907eeffc22707"
 #define AXIS_NUMBER 1
 #define DATA_INPUT_USER 16
 #define CLASS_NUMBER 3
@@ -88,9 +88,9 @@ float input_user_buffer[DATA_INPUT_USER * AXIS_NUMBER]; // Buffer of input value
 float output_class_buffer[CLASS_NUMBER]; // Buffer of class probabilities
 const char *id2class[CLASS_NUMBER + 1] = { // Buffer for mapping class id to class name
 	"unknown",
-	"LowHumidityl",
-	"HighHumidity",
-	"AmbiantHumidity",
+	"Humid ",
+	"Dry ",
+	"Ambiant ",
 };
 */
 

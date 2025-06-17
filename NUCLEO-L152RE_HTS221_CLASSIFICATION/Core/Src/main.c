@@ -101,7 +101,7 @@ typedef struct {
 lin_t lin_hum;
 #if (NEAI_MODE)
 static float class_output_buffer[NB_CLASSES];
-const char *id2class[NB_CLASSES + 1] = {"unknown", "DRY", "HUMID", "AMBIANT"}; // adapte les noms
+const char *id2class[NB_CLASSES + 1] = {"unknown", "HUMID", "DRY", "AMBIANT"}; // adapte les noms
 uint16_t id_class = 0;
 #endif
 uint8_t sequence = 0;

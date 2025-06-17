@@ -256,7 +256,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 }
 
 void HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc){
-	if ((digitalValue > 2700) && (id_class == 2)){
+	if ((digitalValue > 2482) && (id_class == 2)){
 		buzzerState = 1;
 		buzzer(buzzerState);
 	}

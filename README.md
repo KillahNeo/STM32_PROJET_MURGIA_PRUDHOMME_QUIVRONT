@@ -122,3 +122,5 @@ git clone https://github.com/KillahNeo/STM32_PROJET_MURGIA_PRUDHOMME_QUIVRONT.gi
 6. L’écran SPI affiche la classe détectée : `SEC` si Dry, `AMB` si Ambient, `HUM` si Humid. TeraTerm affiche également la classe + l’humidité en %.
 7. Si la classe détectée est **"Humid"** ET que la valeur du **potentiomètre (RV2)** est > 2V :
    - Le buzzer s’active automatiquement (déclenché via interruption ADC watchdog).
+   Si la classe détectée est **"Dry"** ET que la valeur du **potentiomètre (RV2)** est < 2V :
+   - Le buzzer s’active automatiquement (déclenché via interruption ADC watchdog).
